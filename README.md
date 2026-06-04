@@ -17,7 +17,7 @@ Build a learning companion that can help students understand study materials, an
 ## Development Roadmap
 
 ### Version 1
-- [ ] Basic chatbot
+- [x] Basic chatbot
 
 ### Version 2
 - [ ] PDF upload
