@@ -20,11 +20,11 @@ Build a learning companion that can help students understand study materials, an
 - [x] Basic chatbot
 
 ### Version 2
-- [ ] PDF upload
-- [ ] Text extraction
+- [x] PDF upload
+- [x] Text extraction
 
 ### Version 3
-- [ ] Chat with PDF
+- [x] Chat with PDF
 
 ### Version 4
 - [ ] Summaries
