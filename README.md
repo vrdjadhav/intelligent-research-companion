@@ -1,45 +1,125 @@
 # 🤖 Varad AI Assistant
 
-An AI-powered learning assistant being built to learn AI Engineering, LLMs, RAG, and Agentic AI through hands-on development.
+An AI-powered learning assistant built to explore AI Engineering, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Agentic AI through hands-on development.
 
-## Vision
+## 🎯 Vision
 
-Build a learning companion that can help students understand study materials, answer questions, generate summaries, create quizzes, and eventually perform intelligent learning workflows.
+Build a learning companion that helps students understand study materials, interact with documents, generate learning resources, and eventually automate parts of the learning process through intelligent AI workflows.
 
-## Learning Objectives
+---
 
-- Learn LLM integration
-- Understand Retrieval-Augmented Generation (RAG)
-- Explore Agentic AI concepts
-- Build real-world AI applications
-- Improve software engineering skills
+## ✨ Current Features
 
-## Development Roadmap
+### 💬 AI Chat Assistant
 
-### Version 1
-- [x] Basic chatbot
+* Chat with Google's Gemini model
+* Maintain conversation history
+* Support multi-turn conversations
+* Clear chat functionality
 
-### Version 2
-- [x] PDF upload
-- [x] Text extraction
+### 📄 PDF Processing
 
-### Version 3
-- [x] Chat with PDF
+* Upload PDF documents
+* Extract text from uploaded files
+* Process multi-page documents
+* Store extracted content during the session
 
-### Version 4
-- [ ] Summaries
-- [ ] Quiz generation
+### 📚 Chat with PDF
 
-### Version 5
-- [ ] Advanced RAG
+* Ask questions about uploaded documents
+* Use document content as context for responses
+* Continue follow-up conversations about the same document
 
-### Version 6
-- [ ] Agentic learning workflows
+---
 
-## Status
+## ⚙️ How It Works
 
-🚧 In Development
+```text
+Upload PDF
+    ↓
+Extract Text
+    ↓
+Store in Session State
+    ↓
+User Asks Question
+    ↓
+Document Context Added
+    ↓
+Gemini Generates Response
+    ↓
+Answer Displayed
+```
 
-## Author
+---
 
-Varad Jadhav
+## 🛠️ Technologies Used
+
+* Python
+* Streamlit
+* Google Gemini API
+* PyMuPDF
+* python-dotenv
+
+---
+
+## 🚀 Development Progress
+
+### Version 1 ✅
+
+* Basic chatbot
+* Gemini integration
+* Stateful conversations
+* Chat history
+
+### Version 2 ✅
+
+* PDF upload
+* PDF text extraction
+* Document processing
+
+### Version 3 ✅
+
+* Chat with PDF
+* Context-aware responses
+* Session-based document storage
+
+### Version 4 🚧
+
+* Document summarization
+* Quiz generation
+* Study notes generation
+
+### Version 5 🔜
+
+* Advanced RAG pipeline
+* Embeddings
+* Semantic search
+
+### Version 6 🔜
+
+* Agentic learning workflows
+* Resource recommendations
+* Personalized study assistance
+
+---
+
+## 📚 Learning Objectives
+
+Through this project, I aim to strengthen my understanding of:
+
+* AI application development
+* Prompt engineering
+* LLM integration
+* RAG systems
+* Software architecture
+* Modern AI engineering workflows
+
+---
+
+## 👨‍💻 Author
+
+**Varad Jadhav**
+
+B.Tech Artificial Intelligence & Data Science Student
+
+Building projects and learning through hands-on development.
