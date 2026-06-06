@@ -83,13 +83,13 @@ Answer Displayed
 * Context-aware responses
 * Session-based document storage
 
-### Version 4 🚧
+### Version 4 ✅
 
 * Document summarization
 * Quiz generation
 * Study notes generation
 
-### Version 5 🔜
+### Version 5 🚧
 
 * Advanced RAG pipeline
 * Embeddings
