@@ -1,4 +1,3 @@
-# src/pdf_handler.py
 import fitz  # PyMuPDF
 
 def extract_text_from_pdf(uploaded_file):

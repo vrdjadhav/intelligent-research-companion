@@ -1,16 +1,23 @@
 # src/chatbot.py
+import os
+from google import genai
+from google.genai import types
+from dotenv import load_dotenv
 
-import google.generativeai as genai
+# 1. Load environment variables safely from your local .env file
+load_dotenv()
+
+# 2. Initialize the modern Gemini client
+client = genai.Client()
 
 def start_new_chat():
     """
-    Initializes a fresh, clean Gemini chat session.
-    Configures the model variant and sets up backend communication rules.
+    Initializes a fresh, modern Gemini chat session.
+    Using gemini-2.5-flash as our fast, multi-turn study companion.
     """
     try:
-        # Using gemini-1.5-flash as our fast, responsive study companion
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        chat = model.start_chat(history=[])
+        # Correct official initiation method for tracking stateless multi-turn chains
+        chat = client.chats.create(model="gemini-2.5-flash")
         return chat
     except Exception as e:
         print(f"\n[CRITICAL] Failed to initialize Gemini Chat Session: {e}\n")
@@ -18,30 +25,30 @@ def start_new_chat():
 
 def send_chat_message(chat_session, user_message, context=None):
     """
-    Sends a user message to an active chat session with optional document context.
+    Sends a user message to an active chat session with targeted RAG fragments.
     
-    Optimized to prevent 'History Ballooning' by structuring the context turn
-    cleanly without spamming repetitive system headers into the chat history.
+    Uses standard structural prompts to protect history tracking while 
+    leveraging the modern SDK object layer cleanly.
     """
     if chat_session is None:
         return "⚠️ Chat session could not be initialized."
         
     try:
-        # If document text exists, wrap it neatly so Gemini treats it as active context
+        # If relevant document text fragments exist, present them as temporary instruction boundaries
         if context:
             full_prompt = (
-                f"Context from uploaded document:\n{context}\n\n"
-                f"Question: {user_message}"
+                f"You are a helpful study assistant. Use the following context extracted "
+                f"from the document to answer the user's question accurately.\n\n"
+                f"=== DOCUMENT CONTEXT ===\n{context}\n========================\n\n"
+                f"User Question: {user_message}"
             )
         else:
-            # Fall back to standard messaging if no document is active
             full_prompt = user_message
 
-        # Send the payload to the active session tracking backend
+        # Fire the structured text stream payload to the chat backend session
         response = chat_session.send_message(full_prompt)
         return response.text
         
     except Exception as e:
-        # Prints the precise API or formatting exception directly to your running terminal
         print(f"\n[GEMINI API ERROR]: {e}\n")
-        return "⚠️ An error occurred while generating the response."
+        return f"⚠️ An error occurred while generating the response: {e}"
