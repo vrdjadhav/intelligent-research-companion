@@ -104,10 +104,10 @@ Full Raw Text     FAISS Segment
 * Dynamic batch-processing ingestion to handle massive textbooks/handbooks without payload errors
 * Cross-referencing matrix and source filename citation tracking across all uploaded materials concurrently
 
-### Version 6.0 🚧
+### Version 6.0 ✅
 * Persistent local disk serialization (saving and loading compiled FAISS indexes from hard drive cache)
 
-### Version 7.0 🔜
+### Version 7.0 🚧
 * Agentic learning workflows
 * Weakness mapping evaluation quizzes & personalized tracking agent
 
