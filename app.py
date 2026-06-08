@@ -13,9 +13,10 @@ st.set_page_config(
 from src.chatbot import start_new_chat, send_chat_message, determine_routing_intent
 from src.pdf_handler import extract_text_from_pdf
 from src.text_splitter import split_text_into_chunks
-from src.vector_store import create_vector_db, search_vector_db
+# Expanded import matrix to pull tracking dependencies for disk persistence
+from src.vector_store import create_vector_db, search_vector_db, load_vector_db, clear_local_cache
 
-# 3. Initialize Multi-Document Session States (Version 5.2 Architecture)
+# 3. Initialize Multi-Document Session States (Version 6.0 Architecture)
 if "gemini_chat" not in st.session_state:
     st.session_state.gemini_chat = start_new_chat()
 
@@ -28,22 +29,36 @@ if "processed_files" not in st.session_state:
 if "global_text_pool" not in st.session_state:
     st.session_state.global_text_pool = ""     # Combined text matrix for GLOBAL summary mode
 
-if "faiss_index" not in st.session_state:
-    st.session_state.faiss_index = None        # Shared cumulative FAISS index pool
-
-if "mapped_chunks" not in st.session_state:
-    st.session_state.mapped_chunks = []        # Shared cumulative text chunks array
+# --- VERSION 6.0 PERSISTENT LOCAL CACHE ENGINE BOOTSTRAPPING ---
+if "faiss_index" not in st.session_state or "mapped_chunks" not in st.session_state:
+    # Attempt to hotload pre-compiled indices straight from the local hard drive
+    cached_index, cached_chunks = load_vector_db()
+    
+    st.session_state.faiss_index = cached_index
+    st.session_state.mapped_chunks = cached_chunks
+    
+    # Reconstruct processed file registries based on loaded text data mappings
+    if cached_chunks:
+        extracted_names = set()
+        for chunk in cached_chunks:
+            if chunk.startswith("[") and "]:" in chunk:
+                filename = chunk.split("]:")[0].lstrip("[")
+                extracted_names.add(filename)
+        st.session_state.processed_files = extracted_names
+        
+        # Build back the global text pool layout for global summaries
+        st.session_state.global_text_pool = "\n\n".join(cached_chunks)
 
 
 # App Headers (Neutral Branding)
 st.title("🤖 Intelligent Research Companion")
-st.caption("Version 5.2: Multi-Document Vector Pool & Routing Engine")
+st.caption("Version 6.0: Persistent Local Disk Serialization & Vector Cache")
 
 
 # 4. Sidebar UI: Project Info, PDF Uploader, and Actions
 with st.sidebar:
     st.header("Project Info")
-    st.write("**Version:** 5.2 (Multi-Doc RAG Pool)")
+    st.write("**Version:** 6.0 (Persistent Cache)")
     st.write("**Developer:** Technical Assistant")
     st.write("**Status:** Active Companion")
     
@@ -105,7 +120,7 @@ with st.sidebar:
                 
     st.markdown("---")
     
-    # Reset Controls
+    # Reset Controls (Upgraded to handle hard drive serialization files clear)
     if st.button("🗑️ Clear Chat & Document Matrix", use_container_width=True):
         st.session_state.gemini_chat = start_new_chat()
         st.session_state.ui_history = []  
@@ -113,6 +128,9 @@ with st.sidebar:
         st.session_state.global_text_pool = ""
         st.session_state.faiss_index = None
         st.session_state.mapped_chunks = []
+        
+        # Hard purge local binary files from storage directory
+        clear_local_cache()
         
         if "pdf_uploader_widget" in st.session_state:
             del st.session_state["pdf_uploader_widget"]
