@@ -1,130 +1,132 @@
-# 🤖 Intelligent Research Companion
+🤖 Intelligent Research Companion
+An enterprise-grade, high-performance learning companion built to explore AI Engineering, Large Language Models (LLMs), hybrid Retrieval-Augmented Generation (RAG) structures, and autonomous Agentic AI loops.
 
-An AI-powered learning assistant built to explore AI Engineering, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Agentic AI through hands-on development.
+The system features an unbranded, production-ready interface that completely isolates interactive context-aware research dialogue from localized agentic knowledge-gap evaluation workflows.
 
-## 🎯 Vision
+🎯 Vision
+Build a learning companion that helps students understand study materials, interact with documents, generate learning resources, and automate sections of the learning workflow through multi-agent critique evaluation loops.
 
-Build a learning companion that helps students understand study materials, interact with documents, generate learning resources, and eventually automate parts of the learning process through intelligent AI workflows.
+✨ System Architecture & Capabilities
+💬 Context-Aware Research Chat (Tab 1)
+Elite Butler Persona: Conversational interactions processed under a sophisticated, formal butler/right-hand-man behavioral matrix.
 
----
+Intelligent Intent Traffic Routing: Background intent classification powered by type-safe schemas that dynamically redirect queries between global document summarizations and localized coordinate vector lookups.
 
-## ✨ Current Features
+Adaptive Source Citations: An interactive UI citations viewer that uncovers exact matched source file fragments using localized vector mapping coordinates underneath assistant responses.
 
-### 💬 AI Chat Assistant & Elite Persona
-* Chat with Google's advanced Gemini model layered under a highly sophisticated, formal butler/right-hand-man persona.
-* Maintain fully stateful conversation history with multi-turn capabilities.
-* Persistent clear chat and computational matrix flush functionality.
+Fail-Safe Pipeline Guards: Resilient string-matching keyword overrides and context truncation boundaries that safeguard the system against token payload overflows.
 
-### 🧠 LLM-Driven Dynamic Intent Routing
-* Automated background intent classification microservice using strict Pydantic JSON schemas.
-* Dynamic traffic routing that switches between global document summaries and localized context lookups effortlessly.
-* Resilient string-matching keyword fallback guard in case of external API disruptions.
+🧠 Agentic Weakness Mapping & Evaluation (Tab 2)
+Autonomous Quiz Ingestion: An on-demand evaluation agent that scans active document chunks to dynamically generate customized, deeply conceptual open-ended questions.
 
-### 🗂️ Advanced Local RAG Execution
-* Automated text matrix segmentation using variable chunk sizes with character overlap boundaries.
-* High-speed mathematical vector indexing utilizing local FAISS vector stores.
-* Interactive UI citations expander showing exact localized document coordinate fragments underneath responses.
-* Context Truncation Guard preventing API crashes by safely monitoring character length thresholds.
+Evaluator Critic Feedback Loop: An asynchronous grading agent that acts as an objective critic, evaluating user answers against ground-truth vector documents to measure actual comprehension percentages.
 
----
+Diagnostic Report Carding: Deep systemic analytics that instantly identify your single primary knowledge gap, deliver itemized structural strength/weakness matrices, and provide inline remedial learning guides.
 
-## ⚙️ How It Works
+⚙️ How It Works
+Upload PDF
 
-```text
-       Upload PDF
-            │
-    Extract Text Matrix
-            │
-  Chunking & Vectorization ──► Saved to FAISS Index
-            │
-    User Enters Command
-            │
-   [LLM Intent Router] ───────► Evaluates Scope (GLOBAL vs LOCAL)
-      ╱            ╲
-     ╱ GLOBAL       ╲ LOCAL
-    ▼                ▼
-Full Raw Text     FAISS Segment
- Context           Coordinates
-     ╲              ╱
-      ▼            ▼
-   Gemini Generates Response
-            │
-   Polite Butler Formatting
-```
-## 🛠️ Technologies Used
+Processing starts instantly via st.sidebar.status container.
 
-* **Programming Language:** Python
-* **UI Architecture:** Streamlit
-* **Core LLM Engine:** Google Gemini API (`google-genai` SDK)
-* **Vector Database:** FAISS (Facebook AI Similarity Search)
-* **Data Validation:** Pydantic (Type-Safe Schema structural enforcement)
-* **Document Engine:** PyMuPDF (PDF Parser)
-* **Environment Controls:** python-dotenv
+Natural text layer is extracted using high-performance parsers without artificial delay holds.
 
----
+Semantic Chunking
 
-## 🚀 Development Progress
+Text matrices are sliced into overlapping string tokens.
 
-### Version 1 ✅
-* Basic chatbot interface
-* Gemini integration endpoints
-* Stateful conversation matrices
-* Multi-turn chat history recall
+Database fragments are tagged with explicit file source metadata and pushed into the FAISS memory pool.
 
-### Version 2 ✅
-* Standard PDF upload integration
-* Raw PDF text extraction
-* Pipeline document processing arrays
+Tab 1 UI: Interactive Research Chat
 
-### Version 3 ✅
-* Deep "Chat with PDF" features
-* Context-aware backend injection responses
-* Session-state document temporary memory storage
+User enters a natural language query matrix.
 
-### Version 4 ✅
-* Automated high-level document summarization
-* Generative multi-choice study quiz engine
-* Core concept study notes generation algorithms
+System executes background intent classification routers.
 
-### Version 5.0 ✅
-* Advanced Production RAG pipeline implementation
-* Text matrix overlapping token splitters & embeddings
-* Local high-performance FAISS semantic search indexing
-* Explicit UI step-by-step pipeline assurance checkpoints
+Global routes process the complete raw text pool; Local routes pull nearest-neighbor coordinate vectors.
 
-### Version 5.1 ✅
-* Intelligent dynamic traffic routing architecture
-* Strict Pydantic structural schema output enforcement
-* Context truncation safety guardrails & fallback keyword protection
-* Integrated elite butler core persona behavior adjustments
+Gemini compiles the context data and returns custom-tailored answers via the elite butler persona.
 
-### Version 5.2 ✅
-* Multi-Document Vector Pools architecture
-* Expand database coordinates to support multiple simultaneous PDF uploads
-* Dynamic batch-processing ingestion to handle massive textbooks/handbooks without payload errors
-* Cross-referencing matrix and source filename citation tracking across all uploaded materials concurrently
+Tab 2 UI: Agentic Evaluation Portal
 
-### Version 6.0 ✅
-* Persistent local disk serialization (saving and loading compiled FAISS indexes from hard drive cache)
+User triggers an evaluation request.
 
-### Version 7.0 🚧
-* Agentic learning workflows
-* Weakness mapping evaluation quizzes & personalized tracking agent
+Pydantic-enforced generation engines yield 3 highly conceptual open-ended questions.
 
----
+User enters comprehensive text explanations.
 
-## 📚 Learning Objectives
+Evaluator Critic agent loops score submissions against ground-truth document metrics to map conceptual blindspots.
 
-Through this project, I aim to strengthen my practical understanding of:
-* Modern AI application system development
-* Advanced prompt engineering & persona architecture
-* LLM integration techniques & Structured JSON API responses
-* Hybrid RAG routing logic and dynamic context injection
-* Software architecture principles & pipeline safety guardrails
-* Enterprise-level AI engineering development workflows
+🚀 Installation & Local Deployment
+Follow these steps to initialize the intelligent environment on your local machine:
 
----
+1. Clone the Repository
+Bash
+git clone https://github.com/vrdjadhav/intelligent-research-companion.git
+cd intelligent-research-companion
+2. Set Up a Virtual Environment
+Initialize an isolated workspace to prevent package version conflicts:
 
-## 👨‍💻 Author
+Bash
+python -m venv venv
+Activate the environment:
 
-**Varad Jadhav** *B.Tech Artificial Intelligence & Data Science Student* Building production-ready systems and learning through rigorous, hands-on development..
+Windows (Command Prompt): venv\Scripts\activate
+
+Mac/Linux: source venv/bin/activate
+
+3. Install Dependencies
+Leverage the loose-targeted production dependency file to install the required framework engines:
+
+Bash
+pip install -r requirements.txt
+4. Configure Environment Variables
+Create a file named .env in the root directory of the project and insert your Gemini API credential matrix:
+
+Plaintext
+GEMINI_API_KEY=your_actual_api_key_here
+5. Launch the Application
+Fire up the local host web server to initialize the user interface:
+
+Bash
+streamlit run app.py
+🛠️ Production Technologies Used
+UI Architecture: Streamlit (Dynamic layout tabs, session-scoped state-machine engines)
+
+Core GenAI SDK: Google GenAI API (Official ecosystem libraries)
+
+Vector Engine: FAISS (Facebook AI Similarity Search - High-speed CPU vector space matrix)
+
+Data Validation: Pydantic (Strict Type-Safe schema structural output enforcement)
+
+Document Parser: PyMuPDF (Clean textual matrix extraction)
+
+Caching Layer: Persistent Local Disk Serialization (Hard drive cache index save/load routines)
+
+Environment Controls: python-dotenv
+
+🚀 Development Ledger
+Phase 1: Conversational baseline models, file-upload layers, and contextual temporary session memory spaces.
+
+Phase 2: Document summarization macros and rudimentary quiz extraction metrics.
+
+Phase 3: Production-grade overlapping semantic splitters, multi-document vector pools, filename asset mapping, and Pydantic-enforced dynamic intent traffic routing architectures.
+
+Phase 4: Persistent local disk serialization enabling hot-loading and hard-drive binary vector cache saves.
+
+Phase 5: Integrated autonomous Agentic AI loops utilizing Tab-isolated layout matrices and Evaluator Critic weakness mapping report cards.
+
+📚 Learning Framework Goals
+This system serves as an active environment to master the underlying computer science behind:
+
+Coordinate geometry and mathematical distance mapping calculations (Cosine Similarity/Euclidean Space) inside embedding vector zones.
+
+Session state management and execution lifecycle loops inside stateless UI server structures.
+
+Constrained structured generation methods that force conversational LLMs to operate as strict, exception-safe JSON APIs.
+
+Autonomous agent orchestration pipelines utilizing reflective evaluator feedback loops.
+
+👨‍💻 Author
+Varad Jadhav
+B.Tech Artificial Intelligence & Data Science Student
+Building production-ready systems and mastering engineering principles through rigorous, hands-on development.
